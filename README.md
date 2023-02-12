@@ -24,13 +24,14 @@ In the **Client Server architecture**, there is request response cycle between C
 
 In **Peer to Peer Architecture**, things are little bit different here.There is no involvement if server here, the data is transfered between the Browsers only, which inturn decreases the Latency. In Terms of the Video Conferencing Platform, WebRTC is the Newest implementation where the browser deals with the server in order to establish connection only, later the data(VIdeo, audio, Etc) is between the Browsers itself.
 
-# WebRTC
-Inorder to know about WbeRTC, we need to have an idea about Websockets.
-Though Info is transfered between browsers, inorder to intiate connection the browser should approach Server.
 **Websockets**
 Websockets are the implementation of client server architecture, where there is request is been sent from client to the server.
 Generally in this architecture there is a request from client to the server and server responds, there is no two way communication so the client needs to constantly ping the server for any update which increases the latency.So websockets open bidirectional tunnel between client and the server so even the server can respond whenever there is a change in the system.In the Context of video conferencing this method also has some latency because the client is not directly in contact with the client.His data is routed through the server.In order to mitigate this WebRTC came into picture.
+# WebRTC
+Inorder to know about WbeRTC, we need to have an idea about Websockets.
+Though Info is transfered between browsers, inorder to intiate connection the browser should approach Server.
 In WebRTC the architecture used is Peer 2 Peer where the clients only reach out to server for signaling purpose(To intiate the request between the browsers) , later the client interacts directly with the client so there is no server involvement which inturn decreases the latency.
+1. https://webrtc-security.github.io/
 
 In Order to understand the WebRTC, there are few set of Topics which needs to be read upon
 1. NAT
@@ -39,6 +40,12 @@ In Order to understand the WebRTC, there are few set of Topics which needs to be
 4. SDP
 5. Signaling the SDP via Websockets
 
+#NAT SlipStreaming
+1. https://medium.com/dsc-sastra-deemed-to-be-university/nat-slipstreaming-1a94351dd518
 
-
-
+#mDNS
+WebRTC currently lets web applications discover private IP addresses to enable direct connectivity between hosts on a local network. While private IP addresses do not uniquely identify browser users, they may still be used for tracking purposes. To prevent this misuse, private IP addresses returned by RTCPeerConnection will now be masked with mDNS hostnames in certain situations. While this change should be transparent to most WebRTC applications, some developers may need to update their client and backend services. 
+1. https://datatracker.ietf.org/doc/html/draft-ietf-rtcweb-mdns-ice-candidates-03
+2. https://groups.google.com/g/discuss-webrtc/c/6stQXi72BEU
+3. https://getstream.io/blog/webrtc-ip-leaks/
+4. https://webrtchacks.com/dear-ny-times/
