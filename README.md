@@ -34,9 +34,14 @@ In WebRTC the architecture used is Peer 2 Peer where the clients only reach out 
 1. https://webrtc-security.github.io/
 
 In Order to understand the WebRTC, there are few set of Topics which needs to be read upon
-1. NAT
-2. STUN, TURN
-3. ICE
+1. NAT - It is Technology where the Private or Local Ip Addresses of the Internal hosts is swapped with the public IP of the Router.It Improves the Security because internal Hosts IP Address are hidden.
+  a. One to One NAT
+  b. Address Restricted NAT
+  c. Port Restricted NAT
+  d. Symmetric NAT
+2. Session Traversal Utilities for NAT (STUN) - The Functionality of the STUN server is to tell the Public IP Address/ Port Through NAT.Works for Full Cone, Port restricted NAT, Address Restricted NAT.Doesnt work for Symmentric NAT. Stun Server Port 3478, 5349 for TLS. Cheap to Maintain.
+3. Traversal using relays around NAT (TURN) - In case of Symmentric NAT we use TURN. It's just a server that relays packets. Turn default server Port 3478, 5349 for TLS. Expensive to maintain and run.
+3. Interactive Connectivity Establishment(ICE) -ICE collects all available candidates(Local IP Address, refelexive Addresses - STUN Ones and relayed Addresses - TURN Addresses). These all address are calles ICE Candidates. All these collected addresses are then sent to the remote peer via SDP. 
 4. SDP
 5. Signaling the SDP via Websockets
 
