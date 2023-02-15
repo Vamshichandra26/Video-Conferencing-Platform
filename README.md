@@ -54,3 +54,10 @@ WebRTC currently lets web applications discover private IP addresses to enable d
 2. https://groups.google.com/g/discuss-webrtc/c/6stQXi72BEU
 3. https://getstream.io/blog/webrtc-ip-leaks/
 4. https://webrtchacks.com/dear-ny-times/
+
+# SFU / MCU / Peer2Peer
+ Selective Forwarding Unit - A Selective Forwarding Unit (SFU) is a media server that receives media from each party in a conference call, decides which streams should be forwarded to other parties, and then forwards them.
+Multipoint Control Unit - A WebRTC MCU is a communication server that helps enable real-time communication (RTC) between devices and applications. It stands for “multipoint control unit” and allows for multi-party communication by integrating various audio and video signals into a single stream.
+Peer2Peer - P2P networks are different from traditional client-server networks, in which each client is connected to a central server. In a P2P network, there is no central server; instead, each peer is equal and can connect to any other peer on the network.
+
+1. https://getstream.io/blog/what-is-a-selective-forwarding-unit-in-webrtc/
